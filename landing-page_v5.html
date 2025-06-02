@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevate Your Reputation | The Review Card Program</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* style.css - V5 */
+        :root {
+            --primary-green: #18883e;
+            --light-green-accent: #E0F2F1; /* For subtle backgrounds or highlights */
+            --dark-text: #333D42; /* Slightly desaturated dark blue/gray */
+            --medium-gray: #5A6A72;
+            --light-gray-bg: #F4F6F8; /* Slightly cooler light gray */
+            --white-color: #FFFFFF;
+            --border-color: #DEE2E6; /* Softer border */
+            --star-color: #FFC107;
+            --arrow-color: #FF9800;
+            --discount-color: #D32F2F;
+            --best-value-bg: #FFC107;
+            --hero-text-color: #FFFFFF; /* For text on hero background image */
+            --status-struggling-bg: #FECDD3; /* Light red for struggling badge */
+            --status-struggling-text: #9F1239; /* Darker red for struggling text */
+            --status-thriving-bg: #D1FAE5; /* Light green for thriving badge */
+            --status-thriving-text: #065F46; /* Darker green for thriving text */
+
+
+            --font-family: 'Poppins', sans-serif;
+            --base-font-size: 16px;
+            --header-height: 70px;
+        }
+
+        /* Reset and Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-size: var(--base-font-size);
+            line-height: 1.7;
+            color: var(--dark-text);
+            background-color: var(--white-color);
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--dark-text);
+        }
+
+        h1 { font-size: 2.6rem; margin-bottom: 1rem; }
+        h2 { font-size: 2.1rem; margin-bottom: 0.75rem; }
+        h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+
+        p { margin-bottom: 1.2rem; color: var(--medium-gray); font-size: 1.05rem;}
+        a { text-decoration: none; color: var(--primary-green); transition: color 0.3s ease; }
+        a:hover { color: #126a2f; }
+        img { max-width: 100%; height: auto; display: block; }
+        ul { list-style: none; }
+
+        .highlight { color: var(--primary-green); font-weight: 600; }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 50px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-transform: none;
+            letter-spacing: 0.2px;
+            line-height: 1.5;
+        }
+
+        .btn-primary, .btn-submit, 
+        .offer-card .btn-primary,
+        .comparison-cta .btn {
+            background: linear-gradient(90deg,#168a3e -40%,#2bce8a 120%);
+            color: var(--white-color);
+            box-shadow: 0 4px 12px rgba(22, 138, 62, 0.3);
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        .btn-primary:hover, .btn-submit:hover,
+        .offer-card .btn-primary:hover,
+        .comparison-cta .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(22, 138, 62, 0.4);
+            color: var(--white-color); /* Ensure text color remains white on hover */
+        }
+
+        .btn-secondary { /* General secondary button style */
+            background-color: transparent;
+            color: var(--primary-green);
+            border: 2px solid var(--primary-green);
+            font-weight: 500;
+        }
+        .btn-secondary:hover { /* General secondary button hover */
+            background-color: var(--primary-green);
+            color: var(--white-color);
+            transform: translateY(-2px);
+        }
+
+        .hero-section .btn-secondary { /* Specific for hero secondary button */
+            background-color: var(--white-color); 
+            color: var(--primary-green); 
+            border: 2px solid var(--white-color); /* White border to blend with white bg */
+        }
+        .hero-section .btn-secondary:hover { /* Hero secondary button hover */
+            background-color: var(--primary-green);
+            color: var(--white-color);
+            border-color: var(--primary-green); 
+        }
+        
+        .offer-card .btn-secondary { /* For Free Trial button in offer section */
+             font-weight: 600;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+
+        /* Header */
+        #header {
+            background-color: var(--white-color);
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            height: auto;
+            min-height: var(--header-height);
+            display: flex;
+            align-items: center;
+        }
+        #header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .logo img {
+            max-height: 45px;
+            width: auto;
+        }
+        #header nav ul {
+            display: flex;
+            align-items: center;
+        }
+        #header nav ul li {
+            margin-left: 28px;
+        }
+        #header nav ul li a {
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: var(--dark-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        #header nav ul li a:hover, #header nav ul li a.active {
+            color: var(--primary-green);
+        }
+        #mobile-menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--dark-text); }
+
+        /* Hero Section */
+        .hero-section {
+            padding-top: calc(var(--header-height) + 70px);
+            padding-bottom: 70px;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80');
+            background-size: cover;
+            background-position: center center;
+            color: var(--hero-text-color);
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-text h1 {
+            font-size: 2.8rem;
+            line-height: 1.25;
+            color: var(--hero-text-color);
+            margin-bottom: 1.5rem;
+        }
+        .hero-text .subtitle {
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-section .highlight {
+            color: var(--best-value-bg);
+        }
+        .cta-buttons .btn { margin: 10px; }
+
+
+        /* Google Listing "Before & After" Section - Updated */
+        #google-listing-impact {
+            background-color: var(--light-gray-bg);
+        }
+        .trc-effect-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px; 
+            margin-top: 40px;
+        }
+        .trc-effect-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center; 
+            gap: 10px; 
+            width: 100%;
+        }
+        .listing-card {
+            background-color: var(--white-color);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            width: 100%;
+            text-align: left;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            flex-basis: 0;
+            min-height: 480px;
+            min-width: 280px; 
+        }
+        .listing-card.current-state {
+            border-top: 5px solid var(--status-struggling-text);
+        }
+        .listing-card.projected {
+            border-top: 5px solid var(--status-thriving-text);
+        }
+        .listing-card-header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .status-label {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .status-label.struggling {
+            background-color: var(--status-struggling-bg);
+            color: var(--status-struggling-text);
+        }
+        .status-label.thriving {
+            background-color: var(--status-thriving-bg);
+            color: var(--status-thriving-text);
+        }
+        .listing-card h3 {
+            font-size: 1.2rem;
+            color: var(--dark-text);
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        .business-info-box {
+            background-color: var(--light-gray-bg);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+        .listing-card .business-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            background-color: transparent;
+            border-radius: 0;
+        }
+        .listing-card .business-name i.fab.fa-google {
+            color: #4285F4;
+            margin-right: 8px;
+            font-size: 1.3rem;
+        }
+        .business-info-box .rating-reviews {
+            font-size: 0.95rem;
+            color: var(--medium-gray);
+            display: flex;
+            align-items: center;
+        }
+        .business-info-box .stars { 
+            margin-right: 5px; 
+        }
+        .business-info-box .stars .fa-star,
+        .business-info-box .stars .far.fa-star {
+            color: var(--star-color);
+            margin-right: 1px;
+            font-size: 0.9em; /* Slightly smaller full/empty stars */
+        }
+        .business-info-box .stars .fa-star-half-alt {
+            color: var(--star-color);
+            margin-right: 1px;
+            font-size: 1.1em; /* Relatively larger half-star */
+            vertical-align: -0.05em; 
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+        .stat-item .label {
+            font-weight: 500;
+            color: var(--medium-gray);
+        }
+        .stat-item .value {
+            font-weight: 600;
+            color: var(--dark-text);
+            text-align: right;
+        }
+        .positive-change-indicator {
+            color: var(--primary-green);
+            font-size: 0.9em;
+            margin-left: 5px;
+        }
+        .listing-card.projected .stat-item .value,
+        .listing-card.projected .positive-change-indicator {
+             color: var(--primary-green);
+        }
+        .comparison-cta {
+            background-color: transparent;
+            padding: 10px;
+            box-shadow: none;
+            text-align: center;
+            max-width: 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-self: center;
+            margin: 0;
+            min-height: auto;
+            flex-shrink: 0;
+        }
+        .arrow-indicator {
+            font-size: 1.5rem;
+            color: var(--arrow-color);
+            line-height: 1;
+        }
+        .arrow-indicator.arrow-above-cta { margin-bottom: 8px; }
+        .arrow-indicator.arrow-below-cta { margin-top: 8px; }
+
+        .comparison-cta h4 {
+            font-size: 1rem;
+            color: var(--dark-text);
+            margin-bottom: 5px;
+        }
+        .comparison-cta p { /* "TRC Magic" text */
+            font-size: 0.75rem;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .comparison-cta .btn {
+            padding: 10px 20px;
+        }
+        .trusted-site-badge {
+            margin-top: 15px;
+            max-width: 120px; /* Adjust size as needed */
+            height: auto;
+        }
+        .impact-description {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.1rem;
+        }
+
+        @media (min-width: 992px) {
+            .trc-effect-container {
+                flex-direction: row;
+                align-items: stretch;
+            }
+            .trc-effect-cards {
+                 gap: 10px;
+            }
+            .comparison-cta {
+                margin: 0 10px;
+            }
+        }
+         @media (max-width: 991px) {
+            .comparison-cta {
+                order: 3; /* Ensure CTA is last when stacking */
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            .trc-effect-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            .listing-card {
+                 margin-bottom: 15px;
+                 max-width: 450px;
+            }
+            .listing-card:last-child {
+                 margin-bottom: 0;
+            }
+         }
+
+
+        /* Custom Card Mockup Section */
+        #custom-cards-section {
+            background-color: var(--white-color);
+        }
+        .custom-cards-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+        .custom-cards-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .custom-cards-text h2 { text-align: left; }
+        .custom-cards-text p { font-size: 1.05rem; }
+        .custom-cards-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        .custom-cards-image img {
+            max-width: 100%;
+            max-height: 350px;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+
+        /* Content Sections (General) */
+        .content-section { padding: 70px 0; }
+        .section-title { text-align: center; font-size: 2.3rem; margin-bottom: 15px; color: var(--dark-text); }
+        .section-subtitle { text-align: center; font-size: 1.1rem; color: var(--medium-gray); max-width: 700px; margin: 0 auto 50px auto; }
+
+        /* Features/Benefits Section (How it Works / "The Simple Path...") */
+        #features { background-color: var(--light-gray-bg); }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature-card {
+            background: var(--white-color);
+            padding: 30px 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        .feature-card i {
+            font-size: 2.3rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            display: block;
+        }
+        .feature-card h3 { margin-bottom: 10px; color: var(--dark-text); font-size: 1.25rem; }
+
+
+        /* Offer Section (Membership Tiers) */
+        #offer { background-color: var(--white-color); }
+        .offer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 40px;
+            align-items: stretch;
+        }
+        .offer-card {
+            background-color: var(--white-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.07);
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            position: relative;
+        }
+        .offer-card.monthly-plan, .offer-card.annual-plan {
+            border-top: 5px solid var(--primary-green);
+        }
+        .offer-card.annual-plan {
+             border-color: var(--primary-green);
+             background-color: var(--light-green-accent);
+        }
+        .offer-card h3 {
+            font-size: 1.7rem;
+            color: var(--dark-text);
+            margin-bottom: 15px;
+            text-align: center;
+            padding-top: 25px;
+        }
+        .best-value-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--best-value-bg);
+            color: var(--dark-text);
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 5px;
+            line-height: 1.2;
+            z-index: 2;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+        .offer-features { margin-bottom: 30px; flex-grow: 1; padding-left: 0; }
+        .offer-features li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--dark-text);
+        }
+        .offer-features li i {
+            color: var(--primary-green);
+            margin-right: 10px;
+            font-size: 1rem;
+            margin-top: 2px;
+            width: 18px;
+            text-align: center;
+        }
+        .price-info {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--dark-text);
+            margin-bottom: 25px;
+        }
+        .price-info .price { font-weight: 700; font-size: 1.8rem; color: var(--primary-green); display: block; margin-bottom: 5px;}
+        .price-info .save-badge {
+            display: inline-block;
+            background-color: var(--discount-color);
+            color: var(--white-color);
+            padding: 3px 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-left: 10px;
+        }
+
+
+        /* Contact Form Section */
+        #contact-form-section { background-color: var(--light-gray-bg); }
+        #lead-form {
+            max-width: 700px;
+            margin: 30px auto 0;
+            background: var(--white-color);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 7px;
+            font-size: 0.9rem;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: var(--font-family);
+            transition: border-color 0.3s ease;
+        }
+        .form-group input::placeholder {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 2px rgba(54, 186, 127, 0.2);
+        }
+        .btn-submit {
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+        }
+        .form-message { text-align: center; margin-top: 15px; font-weight: 500; }
+        .form-message.success { color: var(--primary-green); }
+        .form-message.error { color: #D32F2F; }
+
+
+        /* FAQ Section */
+        #faq { background-color: var(--white-color); }
+        .faq-grid { max-width: 750px; margin: 40px auto 0; }
+        .faq-item {
+            background-color: var(--white-color);
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .faq-question {
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            padding: 18px 20px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--dark-text);
+        }
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--primary-green);
+        }
+        .faq-question.active i { transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            padding: 0 20px;
+        }
+        .faq-answer p { font-size: 0.95rem; color: var(--medium-gray); padding-bottom: 0; margin-bottom:0; }
+        .faq-answer.open {
+             padding-top: 0px;
+             padding-bottom: 18px;
+        }
+        .faq-answer.open p { padding-bottom: 0; }
+
+
+        /* Footer */
+        #footer {
+            background-color: var(--dark-text);
+            color: #B0BEC5;
+            padding: 50px 0 25px;
+            margin-top: 60px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+        .footer-logo a { color: var(--white-color); font-size: 1.5rem; font-weight: bold; }
+        .footer-logo p { font-size: 0.9rem; margin-top: 10px; color: #CFD8DC;}
+        .footer-links h4, .footer-contact h4 {
+            color: var(--white-color);
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .footer-links ul li { margin-bottom: 10px; }
+        .footer-links ul li a { color: #B0BEC5; font-size: 0.9rem; }
+        .footer-links ul li a:hover { color: var(--primary-green); }
+        .footer-contact p { font-size: 0.9rem; margin-bottom: 8px; }
+        .footer-contact p a { color: #B0BEC5; }
+        .footer-contact p a:hover { color: var(--primary-green); }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #546E7A;
+            font-size: 0.85rem;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+             .offer-container {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-text h1 { font-size: 2.4rem; }
+            /* .listing-card { max-width: 450px; } /* Allow wider when stacked */
+            .custom-cards-content { flex-direction: column; text-align: center; }
+            .custom-cards-text h2 { text-align: center; }
+            #header nav ul li { margin-left: 20px; }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+             .trc-effect-container { 
+                flex-direction: column;
+            }
+            .comparison-cta {
+                order: 3; 
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+             .trc-effect-cards {
+                flex-direction: column; 
+                align-items: center;
+            }
+            .listing-card {
+                 margin-bottom: 20px; 
+                 max-width: 450px; /* Allow wider cards when stacked */
+            }
+            .listing-card:last-child {
+                 margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2.section-title { font-size: 1.9rem; }
+
+            #header nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white-color);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                padding: 10px 0;
+            }
+            #header nav ul.active { display: flex; }
+            #header nav ul li { margin: 10px 0; text-align: center; width: 100%; }
+            #header nav ul li a { display: block; padding: 10px; }
+
+            #mobile-menu-toggle { display: block; }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-grid { grid-template-columns: 1fr; }
+            .offer-container {
+                 grid-template-columns: 1fr;
+            }
+            .offer-card { max-width: 90%; margin-left:auto; margin-right:auto; }
+            .cta-buttons { display: flex; flex-direction: column; align-items: center; }
+            .cta-buttons .btn { width: 80%; max-width: 300px; margin-bottom: 15px; margin-right: 0; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 { font-size: 1.8rem; }
+            h2.section-title { font-size: 1.7rem; }
+            .btn { padding: 12px 24px; font-size: 0.95rem; }
+            #lead-form { padding: 25px; }
+            #header nav ul li { margin-left: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="https://i0.wp.com/thereviewcard.com/wp-content/uploads/2021/10/trc2.png" alt="The Review Card Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#features">How It Works</a></li>
+                    <li><a href="#google-listing-impact">Features</a></li>
+                    <li><a href="#offer">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+                <button id="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Become the <span class="highlight">Go-To Local Choice</span> with The Review Card Program</h1>
+                <p class="subtitle">
+                    Elevate your [Business Name]'s reputation and attract more customers. Our exclusive program helps you get the reviews that matter, effortlessly.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#offer" class="btn btn-primary">Explore Program Options</a>
+                    <a href="#google-listing-impact" class="btn btn-secondary">See The Potential</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="google-listing-impact" class="content-section">
+        <div class="container">
+            <h2 class="section-title">Visualize Your Growth: <span class="highlight">The TRC Effect</span></h2>
+            <p class="section-subtitle">See the dramatic improvement The Review Card program brings to your <span class="highlight">[Business Name]</span>'s online visibility and customer perception.</p>
+            
+            <div class="trc-effect-container">
+                <div class="trc-effect-cards">
+                    <div class="listing-card current-state">
+                        <div class="listing-card-header">
+                            <span class="status-label struggling">Struggling to Grow</span>
+                            <h3>Your Current Standing</h3>
+                        </div>
+                        <div class="business-info-box">
+                            <p class="business-name"><i class="fab fa-google"></i>[Business Name]</p>
+                            <p class="rating-reviews">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                                </span> 
+                                3.2 (24 reviews)
+                            </p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Monthly Review Growth:</span>
+                            <span class="value" id="current-growth">+2 reviews</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Customer Trust Score:</span>
+                            <span class="value" id="current-trust">Low</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Search Visibility:</span>
+                            <span class="value" id="current-visibility">Page 2-3</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Monthly Leads:</span>
+                            <span class="value" id="current-leads">12-15</span>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-cta">
+                        <div class="arrow-indicator arrow-above-cta">
+                            <i class="fas fa-long-arrow-alt-left"></i>
+                        </div>
+                       <h4>Make The Switch</h4>
+                       <p>TRC Magic</p>
+                       <a href="#offer" class="btn btn-primary">Get Started Now</a>
+                       <div class="arrow-indicator arrow-below-cta">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </div>
+                       <img src="https://i.ibb.co/6R6NQ7Jj/Trusted-Site-Certified-Secure.png" alt="TrustedSite Certified Secure" class="trusted-site-badge" onerror="this.src='https://placehold.co/100x30/FFFFFF/CCCCCC?text=Secure'; this.onerror=null;">
+                    </div>
+
+                    <div class="listing-card projected">
+                        <div class="listing-card-header">
+                            <span class="status-label thriving">Thriving & Growing</span>
+                            <h3>With The Review Card</h3>
+                        </div>
+                         <div class="business-info-box">
+                            <p class="business-name"><i class="fab fa-google"></i>[Business Name]</p>
+                            <p class="rating-reviews">
+                                <span class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </span> 
+                                4.8 (156 reviews <sup class="positive-change-indicator"><i class="fas fa-arrow-up"></i></sup>)
+                            </p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Monthly Review Growth:</span>
+                            <span class="value" id="projected-growth">+18 reviews <sup class="positive-change-indicator"><i class="fas fa-arrow-up"></i></sup></span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Customer Trust Score:</span>
+                            <span class="value" id="projected-trust">Excellent <sup class="positive-change-indicator"><i class="fas fa-arrow-up"></i></sup></span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Search Visibility:</span>
+                            <span class="value" id="projected-visibility">Top 3 Results <sup class="positive-change-indicator"><i class="fas fa-arrow-up"></i></sup></span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Monthly Leads:</span>
+                            <span class="value" id="projected-leads">45-60 <sup class="positive-change-indicator"><i class="fas fa-arrow-up"></i></sup></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="impact-description">With The Review Card, watch your review count soar and your average rating climb, establishing you as a trusted local leader.</p>
+        </div>
+    </section>
+
+    <section id="features" class="content-section">
+        <div class="container">
+            <h2 class="section-title">The <span class="highlight">Simple Path</span> to a Stronger Reputation</h2>
+            <p class="section-subtitle">Our program makes it easy to capture positive customer feedback and turn it into a powerful asset for your business.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Engaging Review Requests</h3>
+                    <p>Our custom-designed cards capture attention in-person, far more effectively than easily ignored emails or texts.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-qrcode"></i>
+                    <h3>Effortless for Customers</h3>
+                    <p>A simple scan directs happy customers straight to your preferred review platforms, making it quick and easy to share their experience.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Targeted & Effective</h3>
+                    <p>Focus on getting reviews from satisfied customers at the peak of their positive experience with your business.</p>
+                </div>
+                 <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Exclusive Local Presence</h3>
+                    <p>Our Featured Member Program offers exclusivity, making you the prominent choice in your category and area.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="custom-cards-section" class="content-section">
+        <div class="container">
+            <div class="custom-cards-content">
+                <div class="custom-cards-text">
+                    <h2 class="section-title" style="text-align:left;">Your Brand, <span class="highlight">Your Cards</span></h2>
+                    <p>We create beautifully designed review cards, customized with your logo and branding. These professional cards make a great impression and serve as a tangible reminder for your customers to share their positive feedback.</p>
+                    <p>Imagine handing these to your satisfied customers – a simple, elegant way to boost your online reputation.</p>
+                    <a href="#contact-form-section" class="btn btn-primary" style="margin-top: 20px;">Design My Cards</a>
+                </div>
+                <div class="custom-cards-image">
+                    <img src="https://i.ibb.co/N6dP0tvP/File-003-2-min.png" alt="Custom Review Card Mockup for [Business Name]" onerror="this.src='https://placehold.co/550x350/E0F2F1/18883e?text=Mockup+Not+Found'; this.onerror=null;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="offer" class="content-section bg-light-shade">
+        <div class="container">
+            <h2 class="section-title">Join The <span class="highlight">Review Card Program</span></h2>
+            <p class="section-subtitle">Choose the option that best suits your business goals. We're here to help you grow.</p>
+            <div class="offer-container">
+                <div class="offer-card monthly-plan">
+                    <h3>Monthly Program</h3>
+                    <ul class="offer-features">
+                        <li><i class="fas fa-crown"></i> Local Market Exclusivity (One [Business Type] per area)</li>
+                        <li><i class="fas fa-palette"></i> Premium Custom-Designed Review Cards</li>
+                        <li><i class="fas fa-rocket"></i> Guaranteed Accelerated Review Growth</li>
+                        <li><i class="fas fa-tags"></i> Dedicated Review Survey Website</li>
+                        <li><i class="fas fa-sync-alt"></i> Change Website Anytime</li>
+                        <li><i class="fas fa-infinity"></i> Endless Possibilities (POS, Receipts, etc.)</li>
+                        <li><i class="fas fa-qrcode"></i> Custom QR Code & Shortlink</li>
+                        <li><i class="fas fa-comments"></i> Valuable Customer Feedback Insights</li>
+                        <li><i class="fas fa-headset"></i> Dedicated Program Manager & 1-on-1 Consulting</li>
+                        <li><i class="fas fa-phone-volume"></i> 24/7/365 Phone & Email Support</li>
+                        <li><i class="fas fa-award"></i> 100% Satisfaction Money-Back Guarantee</li>
+                        <li><i class="fas fa-undo"></i> Cancel Anytime, Keep All Reviews</li>
+                    </ul>
+                    <p class="price-info">
+                        <span class="price">$97</span>/month
+                    </p>
+                    <button class="btn btn-primary btn-block" onclick="showForm('monthly_program')">Choose Monthly Program</button>
+                </div>
+
+                <div class="offer-card annual-plan">
+                    <span class="best-value-badge">BEST VALUE</span>
+                    <h3>Annual Program</h3>
+                    <ul class="offer-features">
+                        <li><i class="fas fa-crown"></i> Local Market Exclusivity (One [Business Type] per area)</li>
+                        <li><i class="fas fa-palette"></i> Premium Custom-Designed Review Cards</li>
+                        <li><i class="fas fa-rocket"></i> Guaranteed Accelerated Review Growth</li>
+                        <li><i class="fas fa-tags"></i> Dedicated Review Survey Website</li>
+                        <li><i class="fas fa-sync-alt"></i> Change Website Anytime</li>
+                        <li><i class="fas fa-infinity"></i> Endless Possibilities (POS, Receipts, etc.)</li>
+                        <li><i class="fas fa-qrcode"></i> Custom QR Code & Shortlink</li>
+                        <li><i class="fas fa-comments"></i> Valuable Customer Feedback Insights</li>
+                        <li><i class="fas fa-headset"></i> Dedicated Program Manager & 1-on-1 Consulting</li>
+                        <li><i class="fas fa-phone-volume"></i> 24/7/365 Phone & Email Support</li>
+                        <li><i class="fas fa-award"></i> 100% Satisfaction Money-Back Guarantee</li>
+                        <li><i class="fas fa-undo"></i> Cancel Anytime, Keep All Reviews</li>
+                    </ul>
+                    <p class="price-info">
+                        <span class="price">$970</span>/year
+                        <span class="save-badge">Save 2 Months!</span>
+                    </p>
+                    <button class="btn btn-primary btn-block" onclick="showForm('annual_program')">Choose Annual Program</button>
+                </div>
+
+                <div class="offer-card">
+                    <h3>Free Trial</h3>
+                     <ul class="offer-features">
+                        <li><i class="fas fa-box-open"></i> Starter Pack of Professional Review Cards</li>
+                        <li><i class="fas fa-cogs"></i> Easy Setup & Guidance</li>
+                        <li><i class="fas fa-star"></i> Keep All Reviews You Generate</li>
+                        <li><i class="fas fa-credit-card"></i> No Credit Card Required to Inquire</li>
+                        <li><i class="fas fa-thumbs-up"></i> Try Risk-Free & See Results</li>
+                    </ul>
+                    <p class="price-info">Get Started Free</p>
+                    <button class="btn btn-secondary btn-block" onclick="showForm('free_trial')">Request Free Trial</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-form-section" class="content-section">
+        <div class="container">
+            <h2 class="section-title" id="form-title-text">Register Your Interest</h2>
+            <p class="section-subtitle">Let's discuss how The Review Card Program can elevate your business. Fill out the form below, and we'll be in touch.</p>
+            <form id="lead-form">
+                <input type="hidden" id="form-selected-plan" name="selected_plan">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="e.g., John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="business-name-form">Business Name</label>
+                        <input type="text" id="business-name-form" name="business_name" required placeholder="e.g., Johnny's Pizza">
+                    </div>
+                    <div class="form-group">
+                        <label for="form-business-type">Type of Business</label>
+                        <input type="text" id="form-business-type" name="business_type" required placeholder="e.g., Pizzeria, Salon, HVAC">
+                    </div>
+                    <div class="form-group">
+                        <label for="form-location">Business City/Area</label>
+                        <input type="text" id="form-location" name="location" required placeholder="e.g., Columbus, OH">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="e.g., john.doe@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g., (555) 123-4567 (Optional)">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit btn-block">Send My Request</button>
+                <p id="form-submission-message" class="form-message"></p>
+            </form>
+        </div>
+    </section>
+
+    <section id="faq" class="content-section bg-light-shade">
+        <div class="container">
+            <h2 class="section-title">Common <span class="highlight">Questions</span></h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How does local exclusivity for Featured Members work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our Featured Member Program guarantees that we only partner with one specific type of business (e.g., one pizzeria, one nail salon) in your defined local area. This ensures you have a unique advantage and aren't competing with other program members nearby.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is the 100% Satisfaction Guarantee?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>For our Featured Members, we are confident in our ability to deliver results. If you don't see the guaranteed review growth or are not completely satisfied within the initial period (e.g., first 30-60 days, as agreed), we offer a full refund. Terms will be clearly outlined in your membership agreement.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Tell me more about the Free Trial.</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The Free Trial is a fantastic way to experience the effectiveness of our cards with minimal commitment. You'll receive a starter pack of cards and guidance. It's typically offered with no credit card required to inquire, and you keep all reviews generated.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What kind of businesses is this program for?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>This program is ideal for local businesses with physical locations that value customer reviews and want to proactively manage their online reputation. This includes restaurants, retail stores, healthcare providers (dentists, medspas), home service companies (HVAC, contractors), salons, florists, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                     <a href="#">The Review Card</a>
+                     <p>Elevating Local Reputations.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#google-listing-impact">Impact</a></li>
+                        <li><a href="#offer">Join Program</a></li>
+                        <li><a href="#faq">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <p>Email: <a href="mailto:support@thereviewcard.com">support@thereviewcard.com</a></p>
+                    <p>Phone: (555) TRC-GROW</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> The Review Card. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+
+        const header = $('#header');
+        let headerHeight = header.outerHeight() || 70; 
+        $(window).on('load', function() {
+            headerHeight = header.outerHeight() || 70;
+        });
+
+        $('nav a[href^="#"], .cta-buttons a[href^="#"], .custom-cards-text a[href^="#"], .comparison-cta a[href^="#"]').on('click', function(event) {
+            var target = $(this.getAttribute('href'));
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top - headerHeight + 1
+                }, 800);
+
+                if ($('#header nav ul').hasClass('active')) {
+                    $('#header nav ul').removeClass('active');
+                    $('#mobile-menu-toggle i').removeClass('fa-times').addClass('fa-bars');
+                }
+            }
+        });
+
+        $('#mobile-menu-toggle').on('click', function() {
+            const navUl = $('nav ul');
+            navUl.toggleClass('active');
+            $(this).find('i').toggleClass('fa-bars fa-times');
+        });
+
+        $('.faq-question').on('click', function() {
+            const answer = $(this).next('.faq-answer');
+            const icon = $(this).find('i');
+
+            $('.faq-answer').not(answer).slideUp(300).removeClass('open')
+                .prev().removeClass('active').find('i').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+            
+            answer.slideToggle(300, function() {
+                $(this).toggleClass('open');
+            });
+            $(this).toggleClass('active');
+            icon.toggleClass('fa-chevron-down fa-chevron-up');
+        });
+
+        const businessName = "Your Business Name"; 
+        const businessType = "Local Pizzeria"; 
+        const businessCity = "Columbus"; 
+
+        $('.hero-section .subtitle').html(
+            `Elevate your <span class="highlight">${businessName}</span>'s reputation and attract more customers. Our exclusive program helps you get the reviews that matter, effortlessly.`
+        );
+        $('#google-listing-impact .section-subtitle').html(
+             `See the dramatic improvement The Review Card program brings to your <span class="highlight">${businessName}</span>'s online visibility and customer perception.`
+        );
+        $('.listing-card .business-name').html(`<i class="fab fa-google"></i>${businessName}`);
+        $('#custom-cards-section .custom-cards-image img').attr('alt', `Custom Review Card Mockup for ${businessName}`);
+        
+        $('.offer-card.monthly-plan .offer-features li:first-child').html(`<i class="fas fa-crown"></i> Local Market Exclusivity (One ${businessType} per area)`);
+        $('.offer-card.annual-plan .offer-features li:first-child').html(`<i class="fas fa-crown"></i> Local Market Exclusivity (One ${businessType} per area)`);
+
+
+        window.showForm = function(planType) {
+            const formSection = $('#contact-form-section');
+            const formTitle = $('#form-title-text');
+            const selectedPlanInput = $('#form-selected-plan');
+            const formSubmissionMessage = $('#form-submission-message');
+
+            formSubmissionMessage.text('').removeClass('success error info');
+            selectedPlanInput.val(planType);
+            formSection.slideDown();
+
+            let titleText = "Register Your Interest";
+            if (planType === 'monthly_program') {
+                titleText = 'Apply for <span class="highlight">Monthly Program</span>';
+            } else if (planType === 'annual_program') {
+                titleText = 'Choose the <span class="highlight">Annual Program</span>';
+            } else if (planType === 'free_trial') {
+                titleText = 'Request <span class="highlight">Free Trial</span>';
+            }
+            formTitle.html(titleText);
+
+            $('html, body').animate({
+                scrollTop: formSection.offset().top - headerHeight - 20
+            }, 800);
+        }
+
+        $('#lead-form').on('submit', function(event) {
+            event.preventDefault();
+            const form = $(this);
+            const formData = form.serializeArray();
+            const formObject = {};
+            const formSubmissionMessage = $('#form-submission-message');
+
+            let isValid = true;
+            form.find('input[required]').each(function() {
+                if ($(this).val().trim() === "") {
+                    isValid = false;
+                    $(this).css('border-color', 'var(--error-color)');
+                } else {
+                    $(this).css('border-color', 'var(--border-color)');
+                }
+            });
+
+            if (!isValid) {
+                formSubmissionMessage.text('Please fill in all required fields.').removeClass('success info').addClass('error');
+                return;
+            }
+
+            $.each(formData, function(i, field) {
+                formObject[field.name] = field.value;
+            });
+
+            console.log("Form Submitted Data:", formObject);
+            formSubmissionMessage.text('Submitting your request...').removeClass('error success').addClass('info');
+
+            setTimeout(function() {
+                let successMessage = 'Thank you! Your request has been received. We will contact you shortly.';
+                if(formObject.selected_plan === 'monthly_program'){
+                    successMessage = 'Thank you for applying for the Monthly Program! We will review your application and contact you soon.';
+                } else if (formObject.selected_plan === 'annual_program'){
+                    successMessage = 'Thank you for choosing the Annual Program! We will contact you to finalize your membership.';
+                } else if (formObject.selected_plan === 'free_trial'){
+                     successMessage = 'Thanks for your interest in the Free Trial! We will send you more information shortly.';
+                }
+                formSubmissionMessage.text(successMessage).removeClass('info error').addClass('success');
+                form[0].reset();
+                form.find('input[required]').css('border-color', 'var(--border-color)');
+            }, 1500);
+        });
+
+        $('#current-year').text(new Date().getFullYear());
+    });
+    </script>
+</body>
+</html>
